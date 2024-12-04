@@ -10,26 +10,37 @@ import SwiftUI
 struct TaskSelectionView: View {
     var body: some View {
         VStack{
-            Text("Выберите дело")
-                           .font(.largeTitle)
-                           .fontWeight(.bold)
-
-                       NavigationLink("Work") {
-                           TimerView(taskName: "Работа")
-                       }
-                       .taskButtonStyle()
-
-                       NavigationLink("Studies") {
-                           TimerView(taskName: "Studies" )
-                       }
-                       .taskButtonStyle()
-
-                       NavigationLink("Relax") {
-                           TimerView(taskName: "Отдых")
-                       }
-                       .taskButtonStyle()
-                   }
-                   .padding()
+            Text("Select a case")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            
+            Spacer()  .frame(height: 100)
+            
+            HStack{
+                NavigationLink("Work") {
+                    TimerView(taskName: "Работа")
+                }
+                .taskButtonStyle()
+                
+                NavigationLink("Studies") {
+                    TimerView(taskName: "Studies" )
+                }
+                .taskButtonStyle()
+            }
+            HStack{
+                NavigationLink("Relax") {
+                    TimerView(taskName: "Отдых")
+                }
+                .taskButtonStyle()
+                
+                NavigationLink("+") {
+                    TimerView(taskName: "Отдых")
+                }
+                .taskButtonStyle()
+                
+            }
+                .padding()
+        }
                }
            }
   
